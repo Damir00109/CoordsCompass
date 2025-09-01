@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "coordscompass",
+	"version": "${version}",
+	"name": "CoordsCompass",
+	"description": "Под мод VPL!",
+	"authors": [
+		"Damir00109"
+	],
+	"contact": {
+		"sources": "https://github.com/Damir00109/CoordsCompass"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/coordscompass/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"com.damir00109.CoordsCompassClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "*",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
