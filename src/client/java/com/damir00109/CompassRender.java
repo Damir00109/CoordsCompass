@@ -1,6 +1,5 @@
 package com.damir00109;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.render.ChunkBuilderMode;
@@ -9,19 +8,11 @@ import net.minecraft.text.Text;
 
 /**
  * Класс, отвечающий за рендер координат игрока и переключение опций при держании компаса.
+ * Также является точкой входа для клиентской части мода.
  */
 public class CompassRender {
-    private static boolean initialized = false;
 
-    public static void start() {
-        if (initialized) return;
-        initialized = true;
-
-        // Регистрируем обработчик тика клиента для отображения координат
-        ClientTickEvents.END_CLIENT_TICK.register(CompassRender::onEndClientTick);
-    }
-
-    private static void onEndClientTick(MinecraftClient client) {
+    public static void onEndClientTick(MinecraftClient client) {
         if (client.player == null) return;
 
         boolean holdingCompass =
